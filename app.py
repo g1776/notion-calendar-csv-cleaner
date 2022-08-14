@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-from typing import Tuple
 from dateutil.parser import parse
 from datetime import timedelta
 
-def clean_date(date: str) -> pd.Series | Tuple[pd.Series, pd.Series]:
+def clean_date(date: str):
     if "→" in date:
         start_date, end_date = date.split("→")
         start = clean_date(start_date)
