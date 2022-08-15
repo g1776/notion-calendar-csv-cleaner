@@ -27,13 +27,13 @@ def clean_date(date: str):
             end = start + timedelta(hours=1)
 
         start_time = start.strftime("%H:%M:%S")
-        start_date = end_date = start.strftime("%y/%m/%d")
+        start_date = end_date = start.strftime("%m/%d/%y")
         end_time = end.strftime("%H:%M:%S")
     else:
         # supply a default start and end time to fill the entire day
         start_time = "00:00:00"
         end_time = "23:59:59"
-        start_date = end_date = parse(date).strftime("%y/%m/%d")
+        start_date = end_date = parse(date).strftime("%m/%d/%y")
 
     return pd.Series({
             "Start Time": start_time,
